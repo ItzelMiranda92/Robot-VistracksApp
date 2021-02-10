@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.3 on win32)" generated="20210210 17:34:58.711" rpa="false">
+<suite id="s1" name="TestChangeStatus" source="C:\development\robot-scripts\first-script\Tests\TestChangeStatus.robot">
+<test id="s1-t1" name="Driving Routine One - Driver1">
+<kw name="Run Driving Routine With Multiple Drivers">
+<tags>
+<tag>DriverStatus</tag>
+</tags>
+<doc>Driver certifying logs routine</doc>
+<arguments>
+<arg>test01@driver.com</arg>
+<arg>123</arg>
+</arguments>
+<kw name="Driving Routine One" library="DrivingRoutines">
+<arguments>
+<arg>${user}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Open vistracks" library="Common">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=UiAutomator2</arg>
+<arg>noReset=False</arg>
+<arg>autoGrantPermissions=True</arg>
+<arg>newCommandTimeout=2500</arg>
+<arg>appActivity=${Activity_NAME}</arg>
+<arg>appPackage=${PACKAGE_NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20210210 17:34:59.214" endtime="20210210 17:35:11.359"></status>
+</kw>
+<status status="PASS" starttime="20210210 17:34:59.213" endtime="20210210 17:35:11.360"></status>
+</kw>
+<kw name="Accept license" library="Common">
+<kw name="Verify license button loaded" library="Login">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=com.vistracks:id/acceptBtn</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20210210 17:35:11.362" endtime="20210210 17:35:11.535"></status>
+</kw>
+<status status="PASS" starttime="20210210 17:35:11.361" endtime="20210210 17:35:11.536"></status>
+</kw>
+<kw name="Click license button" library="Login">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=com.vistracks:id/acceptBtn</arg>
+</arguments>
+<msg timestamp="20210210 17:35:11.539" level="INFO">Clicking element 'id=com.vistracks:id/acceptBtn'.</msg>
+<status status="PASS" starttime="20210210 17:35:11.536" endtime="20210210 17:35:12.859"></status>
+</kw>
+<status status="PASS" starttime="20210210 17:35:11.536" endtime="20210210 17:35:12.859"></status>
+</kw>
+<kw name="Verify account name loaded" library="Login">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=com.vistracks:id/accountNameEt</arg>
+<arg>timeout=60</arg>
+</arguments>
+<status status="PASS" starttime="20210210 17:35:12.860" endtime="20210210 17:35:12.942"></status>
+</kw>
+<status status="PASS" starttime="20210210 17:35:12.860" endtime="20210210 17:35:12.943"></status>
+</kw>
+<status status="PASS" starttime="20210210 17:35:11.361" endtime="20210210 17:35:12.943"></status>
+</kw>
+<kw name="Login with Driver data" library="Common">
+<arguments>
+<arg>${user}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Driver user" library="Login">
+<arguments>
+<arg>${user}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=com.vistracks:id/accountNameEt</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20210210 17:35:12.946" level="INFO">Typing text 'test01@driver.com' into text field 'id=com.vistracks:id/accountNameEt'</msg>
+<status status="PASS" starttime="20210210 17:35:12.944" endtime="20210210 17:35:13.050"></status>
+</kw>
+<status status="PASS" starttime="20210210 17:35:12.944" endtime="20210210 17:35:13.050"></status>
+</kw>
+<kw name="Input Driver password" library="Login">
+<arguments>
+<arg>${password}</arg>
+</arguments>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>id=com.vistracks:id/passwordEt</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20210210 17:35:13.054" level="INFO">Typing text '123' into text field 'id=com.vistracks:id/passwordEt'</msg>
+<status status="PASS" starttime="20210210 17:35:13.051" endtime="20210210 17:35:14.122"></status>
+</kw>
+<status status="PASS" starttime="20210210 17:35:13.051" endtime="20210210 17:35:14.123"></status>
+</kw>
+<kw name="Click Login button" library="Login">
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>id=com.vistracks:id/loginBtn</arg>
+</arguments>
+<msg timestamp="20210210 17:35:14.125" level="INFO">Clicking element 'id=com.vistracks:id/loginBtn'.</msg>
+<status status="PASS" starttime="20210210 17:35:14.123" endtime="20210210 17:35:14.683"></status>
+</kw>
+<status status="PASS" starttime="20210210 17:35:14.123" endtime="20210210 17:35:14.683"></status>
+</kw>
+<kw name="Wait for Syncing Account Data" library="Login">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>id=com.vistracks:id/syncDialogTitle</arg>
+<arg>timeout=60s</arg>
+</arguments>
+<status status="PASS" starttime="20210210 17:35:14.684" endtime="20210210 17:35:20.788"></status>
+</kw>
+<kw name="Wait Until Page Does Not Contain Element" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` disappears from current page.</doc>
+<arguments>
+<arg>id=com.vistracks:id/syncDialogTitle</arg>
+<arg>timeout=60s</arg>
+</arguments>
+<status status="PASS" starttime="20210210 17:35:20.789" endtime="20210210 17:35:46.735"></status>
+</kw>
+<kw name="Get Matching Xpath Count" library="AppiumLibrary">
+<doc>Returns number of elements matching ``xpath``</doc>
+<arguments>
+<arg>xpath=//*[@text="RETRY"]</arg>
+</arguments>
+<assign>
+<var>${count}</var>
+</assign>
+<msg timestamp="20210210 17:35:47.496" level="INFO">${count} = 0</msg>
+<status status="PASS" starttime="20210210 17:35:46.735" endtime="20210210 17:35:47.496"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${count} == 0</arg>
+<arg>sleep</arg>
+<arg>0.5s</arg>
+<arg>ELSE</arg>
+<arg>sleep</arg>
+<arg>0.5s</arg>
+</arguments>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>0.5s</arg>
+</arguments>
+<status status="FAIL" starttime="20210210 17:35:47.497" endtime="20210210 17:35:47.548"></status>
+</kw>
+<status status="FAIL" starttime="20210210 17:35:47.496" endtime="20210210 17:35:47.548"></status>
+</kw>
+<status status="FAIL" starttime="20210210 17:35:14.684" endtime="20210210 17:35:47.548"></status>
+</kw>
+<status status="FAIL" starttime="20210210 17:35:12.943" endtime="20210210 17:35:47.549"></status>
+</kw>
+<status status="FAIL" starttime="20210210 17:34:59.213" endtime="20210210 17:35:47.549"></status>
+</kw>
+<status status="FAIL" starttime="20210210 17:34:59.212" endtime="20210210 17:35:47.549"></status>
+</kw>
+<status status="FAIL" starttime="20210210 17:34:59.211" endtime="20210210 17:35:47.550" critical="yes">Execution terminated by signal</status>
+</test>
+<test id="s1-t2" name="Driving Routine One - Driver2">
+<tags>
+<tag>robot:exit</tag>
+</tags>
+<status status="FAIL" starttime="20210210 17:35:47.552" endtime="20210210 17:35:47.552" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t3" name="Driving Routine One - Driver3">
+<tags>
+<tag>robot:exit</tag>
+</tags>
+<status status="FAIL" starttime="20210210 17:35:47.554" endtime="20210210 17:35:47.556" critical="yes">Test execution stopped due to a fatal error.</status>
+</test>
+<doc>This is a basic test suite for mobile testing with RobotFramework</doc>
+<status status="FAIL" starttime="20210210 17:34:58.715" endtime="20210210 17:35:47.558"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3">Critical Tests</stat>
+<stat pass="0" fail="3">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+<stat pass="0" fail="2">robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="3" id="s1" name="TestChangeStatus">TestChangeStatus</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20210210 17:34:59.206" level="ERROR">Error in file 'C:\development\robot-scripts\first-script\Resources\PO\DrivingRoutines.robot' on line 3: Resource file '..\Resources\Common.robot' does not exist.</msg>
+</errors>
+</robot>
