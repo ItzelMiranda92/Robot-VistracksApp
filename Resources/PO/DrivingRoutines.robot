@@ -36,26 +36,26 @@ Add Start Break status
     ...     ELSE    run keywords    changestatus.change status to onduty nd     AND     ChangeStatus.Change status to Start Break
 
 Driving Routine One
-    [Arguments]    ${user}  ${password}
+    [Arguments]    ${user}  ${password}     ${time}
     Common.Open vistracks
     Common.Accept license
     Common.Login with Driver data    ${user}      ${password}
     ChangeStatus.Verify if there are uncertified logs
     Common.Add Driving status
-    sleep    10s
+    sleep     ${time}
     changestatus.stop moving
     Common.Add OnDuty ND status
-    sleep    10s
+    sleep     ${time}
     #Common.Add Personal Conveyance status
     #sleep    10s
     #ChangeStatus.Remove Pesonal Conveyance
     #sleep    10s
     Common.Add Sleeper status
-    sleep    10s
+    sleep     ${time}
     Common.Add Start Break status
-    sleep    10s
+    sleep     ${time}
     ChangeStatus.End Break and change status to OnDuty ND
-    sleep    10s
+    sleep     ${time}
     Common.Add OffDuty status
     ChangeStatus.Disconnect from simulator
     Common.Logout
