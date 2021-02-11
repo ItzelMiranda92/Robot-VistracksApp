@@ -25,10 +25,9 @@ Click Login button
 Wait for Syncing Account Data
     wait until element is visible    id=com.vistracks:id/syncDialogTitle  timeout=60s
     wait until page does not contain element       id=com.vistracks:id/syncDialogTitle   timeout=60s
-    ${count}=   Get Matching XPath Count    xpath=//*[@text="RETRY"]
+    ${count}=   Get Matching XPath Count    xpath=//*[@text="Some accounts failed to sync."]
     Run Keyword If   ${count} == 0    sleep    0.5s
-    ...   ELSE   sleep    0.5s
-
+    ...   ELSE   run keywords    click element    xpath=//*[@text="YES"]    AND     wait until page does not contain element       id=com.vistracks:id/syncDialogTitle   timeout=60s
 Wait for Preparing logs
     wait until element is visible    id=com.vistracks:id/splashLogoIV     timeout=45
     wait until page does not contain element       id=com.vistracks:id/splashLogoIV     timeout=45
